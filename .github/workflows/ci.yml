@@ -1,0 +1,45 @@
+name: Education Quiz CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    
+    - name: Install dependencies
+      run: npm install -g htmlhint stylelint jshint
+      
+    - name: Validate HTML
+      run: htmlhint index.html
+      
+    - name: Validate CSS
+      run: stylelint styles.css
+      
+    - name: Validate JavaScript
+      run: jshint app.js
+  
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: .
