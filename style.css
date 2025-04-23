@@ -1,0 +1,185 @@
+/* Базові стилі та скидання */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стилі заголовка */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #4b6cb7;
+    background-image: linear-gradient(to right, #4b6cb7, #182848);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+/* Стилі для контейнера квізу */
+.quiz-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#quiz-progress {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#question-text {
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+    color: #2c3e50;
+}
+
+/* Стилі для варіантів відповідей */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.option {
+    padding: 15px;
+    background-color: #f1f5f9;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option:hover {
+    background-color: #e2e8f0;
+}
+
+.option.selected {
+    background-color: #bcdefa;
+    border-color: #3498db;
+}
+
+.option.correct {
+    background-color: #c8f7c5;
+    border-color: #27ae60;
+}
+
+.option.incorrect {
+    background-color: #f8d7da;
+    border-color: #e74c3c;
+}
+
+/* Стилі для кнопок керування */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4b6cb7;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #3a5795;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#submit-btn {
+    background-color: #27ae60;
+}
+
+#submit-btn:hover {
+    background-color: #219653;
+}
+
+/* Стилі для результатів */
+#results {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+}
+
+#results h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#results p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#restart-btn {
+    background-color: #e67e22;
+}
+
+#restart-btn:hover {
+    background-color: #d35400;
+}
+
+/* Стилі для футера */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .quiz-container {
+        padding: 20px;
+    }
+    
+    button {
+        padding: 10px 20px;
+    }
+}

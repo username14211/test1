@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Освітній Квіз | CI/CD Демо</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Освітній Квіз</h1>
+        <p>Перевірте свої знання з основ програмування</p>
+    </header>
+
+    <main>
+        <div class="quiz-container">
+            <div id="quiz-progress">Питання <span id="current-question">1</span> з <span id="total-questions">5</span></div>
+            
+            <div id="question-container">
+                <h2 id="question-text">Питання завантажується...</h2>
+                
+                <div class="options-container" id="options-container">
+                    <!-- Опції будуть додані з JavaScript -->
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prev-btn" disabled>Попереднє</button>
+                <button id="next-btn">Наступне</button>
+                <button id="submit-btn" style="display: none;">Завершити</button>
+            </div>
+            
+            <div id="results" style="display: none;">
+                <h2>Ваш результат:</h2>
+                <p><span id="score">0</span> з <span id="max-score">0</span> правильних відповідей</p>
+                <button id="restart-btn">Спробувати знову</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© <span id="current-year"></span> Освітній проект з CI/CD. Створено для демонстрації принципів CI/CD.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
